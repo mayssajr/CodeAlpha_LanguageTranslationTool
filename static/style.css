@@ -1,0 +1,105 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 600px;
+    max-width: 500%;
+}
+
+h1 {
+    text-align: center;
+    color: #6c5b7b;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #6c5b7b;
+}
+
+select,
+textarea,
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #f7f9fc;
+}
+
+select:focus,
+textarea:focus,
+input[type="text"]:focus {
+    border-color: #c06c84;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #c06c84;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff847c;
+}
+
+.translation-container {
+    display: flex;
+    flex-direction: column; /* Passer de row à column pour un flux vertical */
+    align-items: center; /* Centrer les éléments horizontalement */
+    margin-top: 20px;
+}
+
+.translation-tile1,
+.translation-tile {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.arrow {
+    font-size: 24px;
+    color: #c06c84;
+    align-self: center;
+    transform: rotate(90deg); /* Faire pivoter la flèche de 90 degrés pour la rendre verticale */
+    margin: 20px 0; /* Ajouter un peu d'espace au-dessus et en dessous */
+}
+
+textarea {
+    resize: none;
+    height: 100px;
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+}

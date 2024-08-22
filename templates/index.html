@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Language Translation Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Language Translation Tool</h1>
+        <form method="POST">
+            <div class="form-group">
+                <label for="detected_language">Detected Language:</label>
+                <input type="text" id="detected_language" name="detected_language" value="{{ full_detected_language }}" readonly>
+            </div>
+            <div class="translation-container">
+                <div class="translation-tile1">
+                    <textarea id="text" name="text" rows="5" placeholder="Enter text here" required>{{ request.form['text'] if request.form else '' }}</textarea>
+                </div>
+                <div class="arrow">
+                    <span>&#x27A1;</span>
+                </div>
+                <div class="translation-tile">
+                    <div class="form-group">
+                        <label for="target_language">Target Language:</label>
+                        <select id="target_language" name="target_language" required>
+                            <option value="" disabled selected>Choose a language</option>
+                            {% for code, language in languages.items() %}
+                                <option value="{{ code }}" {% if target_language == code %}selected{% endif %}>{{ language }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    {% if translated_text %}
+                        <p>{{ translated_text }}</p>
+                    {% else %}
+                        <p>The translated text will appear here...</p>
+                    {% endif %}
+                </div>
+            </div>
+            <button type="submit">Translate</button>
+        </form>
+    </div>
+</body>
+</html>
